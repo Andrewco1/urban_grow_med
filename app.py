@@ -31,7 +31,7 @@ st.title("🌆 Dashboard de Crecimiento Urbano por Barrios y Veredas MEDELLÍN -
 @st.cache_data
 
 def load_data():
-    gdf_resultado = gpd.read_file("crecimiento_urbano_con_porcentajes.shp").to_crs(epsg=4326)
+    gdf_resultado = gpd.read_file("crecimiento_urbano_con_porcentajes_v2.shp").to_crs(epsg=4326)
     gdf_barrios = gpd.read_file("BarrioVereda.shp").to_crs(epsg=4326)
     st.write("Columnas del shapefile:", gdf_resultado.columns.tolist())
     return gdf_resultado, gdf_barrios
