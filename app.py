@@ -35,7 +35,8 @@ def load_data():
     gdf_barrios = gpd.read_file("barrios_simplificado.geojson")
     return gdf_resultado, gdf_barrios
 
-gdf, gdf_barrios = load_data()
+with st.spinner("⏳ Cargando datos geoespaciales..."):
+    gdf, gdf_barrios = load_data()
 
 # --- Sidebar: filtros encadenados ---
 st.sidebar.header("🔍 Filtros")
@@ -64,7 +65,6 @@ gdf_filtrado = gdf_area[
 ]
 
 st.sidebar.markdown("---")
-
 
 # --- Función de zoom dinámico ---
 def calculate_zoom_level(bounds):
@@ -174,6 +174,7 @@ st.caption("Desarollador: Andrés Felipe Giraldo Albornoz")
 st.markdown("""
 ---
 ### 🧰 Herramientas y Librerías Utilizadas
+- **QGIS**
 - **Streamlit**
 - **GeoPandas**
 - **Shapely**
@@ -185,8 +186,7 @@ st.markdown("""
 - **shapely**
 - **json**
 - **scipy**
-            
-            
+
 ### 📦 Datos y Análisis Espacial
 - Se utilizaron imagenes satelitales de Sentinel-2 Level-2A para dos periodos de tiempo [2018-08-07] / [2024-06-01])
 - Contiene datos modificados de Copernicus Sentinel 2024 procesados por el Desarrollador. © Copernicus Sentinel data 2024  ESA.
@@ -197,5 +197,3 @@ Este dashboard y su contenido se publican únicamente con fines académicos y de
 **No representa asesoría profesional, ni recomendaciones de inversión, ni tiene fines comerciales.** 
 Los resultados deben interpretarse con cautela y verificados si se requiere su uso en contextos oficiales o decisionales.
 """)
-
-
