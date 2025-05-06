@@ -64,7 +64,15 @@ gdf_filtrado = gdf_area[
     (gdf_area["area_cre_1"] <= area_range[1])
 ]
 
-st.sidebar.markdown("---")
+gdf_filtrado["tooltip_text"] = (
+    "📍 " + gdf_filtrado["NOMBRE"] +
+    "\n📐 Área: " + gdf_filtrado["area_cre_1"].round(2).astype(str) + " ha" +
+    "\n📈 % crecimiento: " + gdf_filtrado["porcentaje"].round(2).astype(str) + "%"
+)
+
+
+
+st.sidebar.markdown("--- Desarollador: Andrés Felipe Giraldo Albornoz ---")
 
 # --- Función de zoom dinámico ---
 def calculate_zoom_level(bounds):
@@ -119,7 +127,7 @@ else:
     r = pdk.Deck(
         layers=[layer_barrios, layer_crecimiento],
         initial_view_state=view_state,
-        tooltip={"text": "{NOMBRE}\nÁrea: {area_cre_1:.2f} ha\n% crecimiento: {porcentaje:.2f}%"},
+        tooltip={"text": "{tooltip_text}"},
         map_style='mapbox://styles/mapbox/dark-v10'
     )
 
@@ -168,8 +176,7 @@ else:
         fig4.update_traces(texttemplate='%{x:.2f}%', textposition='auto')
         st.plotly_chart(fig4, use_container_width=True)
 
-st.markdown("---")
-st.caption("Desarollador: Andrés Felipe Giraldo Albornoz")
+st.markdown("---  ---")
 
 st.markdown("""
 ---

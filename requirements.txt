@@ -6,8 +6,4 @@ plotly>=5.18
 pandas>=2.0
 numpy>=1.22
 fiona>=1.9
-<<<<<<< HEAD
 pyogrio>=0.6
-=======
-pyogrio>=0.6
->>>>>>> 505093bef500f319d6849b207c737dc4c58508d1
