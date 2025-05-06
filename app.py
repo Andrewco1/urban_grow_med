@@ -72,7 +72,8 @@ gdf_filtrado["tooltip_text"] = (
 
 
 
-st.sidebar.markdown("--- Desarollador: Andrés Felipe Giraldo Albornoz ---")
+st.sidebar.markdown("Desarollador: Andrés Felipe Giraldo Albornoz")
+st.sidebar.markdown("Correo: andresfel@outlook.com")
 
 # --- Función de zoom dinámico ---
 def calculate_zoom_level(bounds):
@@ -144,7 +145,7 @@ else:
         fig1.update_layout(paper_bgcolor="#1e1e1e", plot_bgcolor="#1e1e1e", font_color="#FFFFFF")
         st.plotly_chart(fig1, use_container_width=True)
 
-        st.subheader("📈 Porcentaje de crecimiento por Barrio")
+        st.subheader("📈 Porcentaje de crecimiento por Barrio (Área Urbanizada / Area Total)")
         barrios_pct = barrios.groupby("NOMBRE")["porcentaje"].sum().reset_index()
         fig3 = px.bar(barrios_pct.sort_values("porcentaje", ascending=False).head(15),
                      x="porcentaje", y="NOMBRE", orientation="h",
@@ -165,7 +166,7 @@ else:
         fig2.update_layout(paper_bgcolor="#1e1e1e", plot_bgcolor="#1e1e1e", font_color="#FFFFFF")
         st.plotly_chart(fig2, use_container_width=True)
 
-        st.subheader("📈 Porcentaje de crecimiento por Vereda")
+        st.subheader("📈 Porcentaje de crecimiento por Vereda (Área Urbanizada / Area Total)")
         veredas_pct = veredas.groupby("NOMBRE")["porcentaje"].sum().reset_index()
         fig4 = px.bar(veredas_pct.sort_values("porcentaje", ascending=False).head(15),
                      x="porcentaje", y="NOMBRE", orientation="h",
@@ -176,7 +177,7 @@ else:
         fig4.update_traces(texttemplate='%{x:.2f}%', textposition='auto')
         st.plotly_chart(fig4, use_container_width=True)
 
-st.markdown("---  ---")
+st.markdown("------")
 
 st.markdown("""
 ---
