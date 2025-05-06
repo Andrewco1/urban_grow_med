@@ -169,7 +169,7 @@ else:
         st.plotly_chart(fig4, use_container_width=True)
 
 st.markdown("---")
-st.caption("Andrés Felipe Giraldo Albornoz -  Librerías usadas: rasterio, numpy, matplotlib  con Streamlit, Pydeck y GeoPandas")
+st.caption("Desarollador: Andrés Felipe Giraldo Albornoz")
 
 st.markdown("""
 ---
