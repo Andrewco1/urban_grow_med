@@ -73,7 +73,7 @@ gdf_filtrado["tooltip_text"] = (
 
 
 st.sidebar.markdown("Desarollador: Andrés Felipe Giraldo Albornoz")
-st.sidebar.markdown("Correo: andresfel@outlook.com")
+st.sidebar.markdown("Sígueme en LinkedIn: https://www.linkedin.com/in/andrecol/")
 
 # --- Función de zoom dinámico ---
 def calculate_zoom_level(bounds):
