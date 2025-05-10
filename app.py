@@ -25,7 +25,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("🌆 Dashboard de Crecimiento Urbano por Barrios y Veredas MEDELLÍN - COLOMBIA")
+st.title("🌆 Dashboard de Crecimiento Urbano por Barrios y Veredas Medellín - Colombia")
 
 # --- Cargar datos ---
 @st.cache_data
